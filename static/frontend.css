@@ -1,0 +1,97 @@
+body {
+    /*background: #353535; */
+    line-height: 1.2rem;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+* {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+header {
+    background: transparent!important;
+}
+header div[data-testid="stDecoration"] {
+    display: none;
+}
+section[data-testid="stSidebar"] {
+    top: 0;
+}
+
+figcaption {
+    display: none;
+}
+
+header #MainMenu svg {
+    fill: #FFF;
+    margin: 0 0 2rem;
+}
+
+.appview-container > section:not(.main) { /** Sidebar **/
+    background: #0C1228;
+}
+.appview-container>section:not(.main) p,
+.appview-container>section:not(.main) div {
+    color: #FFF !important;
+}
+.appview-container>section:not(.main) .stSelectbox > div > div * {
+    color: #222B54 !important;
+}
+
+figure {
+    margin: 0;
+}
+
+section.main {
+
+}
+
+div.block-container {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+div.block-container > div > div div.element-container:not(:first-child),
+div.block-container > div > div div[data-testid="stExpander"]{
+    max-width: 736px;
+    margin: 1rem auto 0;
+    width: 100%;
+}
+
+.stMarkdown, .stExpander, .row-widget, .stTextArea {
+    width: initial !important;
+}
+.stMarkdown *, .stExpander *{
+    width: initial !important;
+}
+
+.header {
+    background: rgb(16, 125, 230);
+    background: linear-gradient(45deg, rgba(16, 125, 230, 1) 20%, rgba(36, 176, 219, 1) 100%);
+    text-align: center;
+    padding: 4rem 0 1rem;
+    margin: 0 0 1rem;
+    color: #FFF;
+}
+
+.header figure {
+    display: block;
+    margin: 0 0 2rem;
+}
+
+.header h1,
+.header h1 span,
+.header h3,
+.header h3 span {
+    color: #FFF;
+}
+
+.header h3 span {
+    max-width: 500px;
+    margin: auto;
+}
+
+footer {
+    visibility: hidden;
+}

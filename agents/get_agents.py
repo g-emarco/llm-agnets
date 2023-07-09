@@ -1,5 +1,3 @@
-from langchain import OpenAI
-from langchain.chat_models import ChatOpenAI
 from langchain.llms import VertexAI
 from tools.tools import get_google_search, scrape_linkedin_profile
 from langchain.agents import initialize_agent, Tool, AgentExecutor
@@ -33,7 +31,6 @@ def get_gmail_agent() -> AgentExecutor:
 
 def get_search_agent() -> AgentExecutor:
     llm = VertexAI(temperature=0, verbose=True, max_output_tokens=1000)
-    llm = ChatOpenAI()
 
     tools_for_agent = [
         Tool(
@@ -51,7 +48,7 @@ def get_search_agent() -> AgentExecutor:
     agent = initialize_agent(
         tools_for_agent,
         llm,
-        agent=AgentType.OPENAI_FUNCTIONS,
+        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
         verbose=True,
     )
 

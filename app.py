@@ -1,6 +1,6 @@
 import streamlit as st
 
-from main import sdr_start
+from sdr import sdr_start
 
 
 def local_css(file_name):
@@ -25,9 +25,6 @@ st.markdown(
 )
 
 st.image("static/sdr.jpeg", width=300)
-
-
-
 
 
 with st.expander("How to use Eden-SDR 🤖", expanded=True):

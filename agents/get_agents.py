@@ -5,12 +5,9 @@ from langchain.agents import AgentType
 from langchain.agents.agent_toolkits import GmailToolkit
 from langchain.tools.gmail.utils import build_resource_service, get_gmail_credentials
 
-toolkit = GmailToolkit()
-
 credentials = get_gmail_credentials(
     token_file="token.json",
     scopes=["https://mail.google.com/"],
-    client_secrets_file="credentials.json",
 )
 api_resource = build_resource_service(credentials=credentials)
 gmail_toolkit = GmailToolkit(api_resource=api_resource)

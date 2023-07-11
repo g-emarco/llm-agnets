@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 WORKDIR /app
 COPY Pipfile Pipfile.lock ./
 RUN python -m pip install --upgrade pip

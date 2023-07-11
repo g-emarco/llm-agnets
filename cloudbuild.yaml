@@ -19,5 +19,13 @@ steps:
               '--set-secrets=PROXYCURL_API_KEY=PROXYCURL_API_KEY:latest, SERPAPI_API_KEY=SERPAPI_API_KEY:latest']
   waitFor: [ 'Build Image' ]
 
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  id: Update Secrets
+  args: ['run', 'services', 'update', sdr-agent,
+             --image=us-east1-docker.pkg.dev/$PROJECT_ID/app/sdr-agent:latest,
+              '--region=us-east1',
+              '--update-secrets=/usr/app/token.json=token:latest']
+  waitFor: [ 'Deploy API' ]
 images:
 - 'us-east1-docker.pkg.dev/$PROJECT_ID/app/sdr-agent:latest'

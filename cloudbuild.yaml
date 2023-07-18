@@ -25,7 +25,7 @@ steps:
   args: ['run', 'services', 'update', sdr-agent,
              --image=us-east1-docker.pkg.dev/$PROJECT_ID/app/sdr-agent:latest,
               '--region=us-east1',
-              '--update-secrets=/usr/app/token.json=token:latest']
+              '--update-secrets=credentials.json=credentials:latest']
   waitFor: [ 'Deploy API' ]
 images:
 - 'us-east1-docker.pkg.dev/$PROJECT_ID/app/sdr-agent:latest'

@@ -32,6 +32,7 @@ def sdr_email(
 
 def sdr_start(full_name: str, topic: str, verbose: bool = True):
     person_summary = sdr_spy(full_name=full_name, verbose=verbose)
+    print(person_summary)
     sdr_email(
         full_name=full_name, person_summary=person_summary, topic=topic, verbose=verbose
     )
